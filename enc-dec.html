@@ -86,7 +86,7 @@
             var parseJSON = JSON.parse(encData);
             var JSONInPrettyFormat = JSON.stringify(parseJSON);
             console.log(JSONInPrettyFormat);
-            $.post("http://localhost:3000/encrypt", { encData: JSONInPrettyFormat })
+            $.post("https://enc-dec-tool.netlify.app/encrypt", { encData: JSONInPrettyFormat })
                 .done(function (res) {
                     $('#decData').removeAttr('value');
                     $("#decData").val(res);
@@ -100,7 +100,7 @@
         $("#doDec").click(function () {
             var decData = $("#decData").val();
             console.log(decData);
-            $.post("http://localhost:3000/decrypt", { decData: decData })
+            $.post("https://enc-dec-tool.netlify.app/decrypt", { decData: decData })
                 .done(function (res) {
                     $('#encData').removeAttr('value');
                     var parseJSON = JSON.parse(res);
